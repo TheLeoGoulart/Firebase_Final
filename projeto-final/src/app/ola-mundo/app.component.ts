@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DadosService } from './dados.service';
-import { AuthService } from '.././shared';
+import { AuthService } from '../shared';
 
 declare var google: any;
 
@@ -10,7 +10,7 @@ declare var google: any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class GraficosComponent {
 
   private dados: any;
 

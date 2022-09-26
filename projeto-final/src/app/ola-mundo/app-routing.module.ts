@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { GraficosComponent } from './app.component';
  
 export const OlamundoRoutes: Routes = [
 	{ 
 		path: 'ola-mundo', 
-		component: AppComponent 
+		component: GraficosComponent 
 	}
 ];

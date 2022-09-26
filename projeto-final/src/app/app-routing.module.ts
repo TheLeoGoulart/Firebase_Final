@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { DashboardRoutes, DashboardComponent } from './dashboard';
-import { CalculadoraRoutes } from './calculadora';
-import { TarefaRoutes } from './tarefas';
-import { OlamundoRoutes } from './ola-mundo';
+import { CalculadoraComponent, CalculadoraRoutes } from './calculadora';
+import { ListarTarefaComponent, TarefaRoutes } from './tarefas';
+import { GraficosComponent, OlamundoRoutes } from './ola-mundo';
 import { SignInComponent } from './sign-in';
 import { SignUpComponent } from './sign-up';
 import { ForgotPasswordComponent } from './forgot-password';
@@ -20,6 +20,9 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'verify-email-address', component: VerifyEmailComponent },
+  { path: 'calculadora', component: CalculadoraComponent, canActivate: [AuthGuard] },
+  { path: 'tarefas', component: ListarTarefaComponent, canActivate: [AuthGuard] },
+  { path: 'graficos', component: GraficosComponent, canActivate: [AuthGuard] },
   ...DashboardRoutes,
   ...CalculadoraRoutes,
   ...TarefaRoutes,
