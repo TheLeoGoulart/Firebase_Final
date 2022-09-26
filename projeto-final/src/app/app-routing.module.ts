@@ -10,17 +10,20 @@ import { SignUpComponent } from './sign-up';
 import { ForgotPasswordComponent } from './forgot-password';
 import { VerifyEmailComponent } from './verify-email';
 
-export const routes: Routes = [
-	{ path: '', redirectTo: '/sign-in', pathMatch: 'full' },
-	{ path: 'sign-in', component: SignInComponent },
-	{ path: 'register-user', component: SignUpComponent },
-	{ path: 'dashboard', component: DashboardComponent },
-	{ path: 'forgot-password', component: ForgotPasswordComponent },
-	{ path: 'verify-email-address', component: VerifyEmailComponent },
-	...DashboardRoutes,
-	...CalculadoraRoutes,
-	...TarefaRoutes,
-	...OlamundoRoutes
+// route guard
+import { AuthGuard } from './shared';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: 'sign-in', component: SignInComponent },
+  { path: 'register-user', component: SignUpComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'verify-email-address', component: VerifyEmailComponent },
+  ...DashboardRoutes,
+  ...CalculadoraRoutes,
+  ...TarefaRoutes,
+  ...OlamundoRoutes
 ];
 
 @NgModule({

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DadosService } from './dados.service';
+import { AuthService } from '.././shared';
 
 declare var google: any;
 
@@ -13,7 +14,7 @@ export class DashboardComponent implements OnInit {
 
   private dados: any;
 
-  constructor(private dadosService: DadosService) { }
+  constructor(private dadosService: DadosService, public authService: AuthService) { }
 
   ngOnInit(): void {
     this.dadosService.obterDados().subscribe(
