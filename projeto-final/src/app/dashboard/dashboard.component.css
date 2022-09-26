@@ -1,9 +1,17 @@
-div {
-	float: left;
+.statusT {
+	color:green;
 }
 
-.box{
-	display: flex;
-	width: 100%;
-	flex-direction: column;
+.statusF {
+	color:red;
+}
+
+.user {
+	color:teal;
+}
+
+.boot {
+	color:chocolate;
+	padding:inherit;
+	border: thick;
 }
