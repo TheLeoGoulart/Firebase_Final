@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { DadosService } from './dados.service';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,12 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
   ],
-  providers: [],
+  exports: [
+    AppComponent
+  ],
+  providers:[
+    DadosService
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class GraficosModule { }

@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardModule } from './dashboard';
 import { CalculadoraModule } from './calculadora';
 import { TarefasModule } from './tarefas';
+import { GraficosModule } from './ola-mundo';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -38,6 +39,7 @@ import { AuthService } from "./shared/services/auth.service"
     DashboardModule,
     CalculadoraModule,
     TarefasModule,
+    GraficosModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,

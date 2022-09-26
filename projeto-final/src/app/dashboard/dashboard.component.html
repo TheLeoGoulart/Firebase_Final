@@ -3,27 +3,15 @@
     <a class="navbar-brand col-sm-3 col-md-2 mr-0">
       <img class="brand-logo" src="assets/logo-positronx-white.svg" alt="positronX.io Logo">
     </a>
+    <a class="nav-link active">
+      <i class="fas fa-user"></i>User Profile
+    </a>
+    <a class="nav-link" (click)="authService.SignOut()">
+      <i class="fas fa-sign-out-alt"></i>Log out
+    </a>
   </nav>
-  <!-- Sidebar navigation -->
   <div class="container-fluid">
     <div class="row">
-      <nav class="col-md-2 d-md-block bg-light sidebar">
-        <div class="sidebar-sticky">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link active">
-                <i class="fas fa-user"></i>User Profile
-              </a>
-            </li>
-            <!-- Calling SignOut() Api from AuthService -->
-            <li class="nav-item">
-              <a class="nav-link" (click)="authService.SignOut()">
-                <i class="fas fa-sign-out-alt"></i>Log out
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
       <!-- Main content -->
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="inner-adjust">
@@ -34,7 +22,7 @@
           <div class="row" *ngIf="authService.userData as user">
             <div class="col-md-12">
               <div class="media">
-                <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
+                <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="assets/dummy-user.png"
                   alt="{{user.displayName}}">
                 <div class="media-body">
                   <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
@@ -49,47 +37,3 @@
       </main>
     </div>
   </div>
-
-<div class="box">
-    <div class="input">
-        <div class="form-group">
-            <label for="janeiro">Janeiro</label>
-            <input type="number" class="form-control" id="janeiro" placeholder="Digite um número">
-        </div>
-        <div class="form-group">
-            <label for="fevereiro">Fevereiro</label>
-            <input type="number" class="form-control" id="fevereiro" placeholder="Digite um número">
-        </div>
-        <div class="form-group">
-            <label for="marco">Março</label>
-            <input type="number" class="form-control" id="marco" placeholder="Digite um número">
-        </div>
-        <div class="form-group">
-            <label for="abril">Abril</label>
-            <input type="number" class="form-control" id="abril" placeholder="Digite um número">
-        </div>
-        <div class="form-group">
-            <label for="maio">Maio</label>
-            <input type="number" class="form-control" id="maio" placeholder="Digite um número">
-        </div>
-        <div class="form-group">
-            <label for="junho">Junho</label>
-            <input type="number" class="form-control" id="junho" placeholder="Digite um número">
-        </div>
-        <div class="form-group">
-            <label for="titulo">Titulo</label>
-            <input type="text" class="form-control" id="titulo" placeholder="Digite o título">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="junho"></label>
-        <input type="submit" class="btn btn-success" (click)="atualizargrafico()" value="Atualizar">
-    </div>
-</div>
-
-<div id="pie_chart"></div>
-<div id="3d_pie_chart"></div>
-<div id="donut_chart"></div>
-<div id="bar_chart"></div>
-<div id="line_chart"></div>
-<div id="column_chart"></div>
